@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Dashboard - MediVault</title>
+  <link rel="stylesheet" href="doctor-dashboard.css" />
+</head>
+<body>
+  <header>
+    <h1>Doctor Dashboard - MediVault</h1>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <main class="dashboard">
+    <nav class="sidebar">
+      <ul>
+        <li onclick="showSection('calendar')">Calendar</li>
+        <li onclick="showSection('appointments', event)">Appointments</li>
+        <li onclick="showSection('profile')">Profile</li>
+        <li onclick="showSection('patient-records')">Patient Records</li>
+      </ul>
+    </nav>
+
+    <section id="calendar" class="content-section active">
+      <h2>Doctor Calendar</h2>
+      <p>📅 (Placeholder for calendar integration)</p>
+    </section>
+
+    <section id="appointments" class="content-section">
+      <h2>Today's Appointments</h2>
+      <ul>
+        <li>9:00 AM – John Smith (Consultation)</li>
+        <li>11:30 AM – Emma Brown (Follow-up)</li>
+      </ul>
+    </section>
+
+    <section id="profile" class="content-section">
+      <h2>Doctor Profile</h2>
+      <p><strong>Name:</strong> Dr. Alex Carter</p>
+      <p><strong>Department:</strong> Cardiology</p>
+      <p><strong>Specialty:</strong> Interventional Cardiology</p>
+    </section>
+
+    <section id="patient-records" class="content-section">
+      <h2>Patient Records</h2>
+      <div class="record-card">
+        <h4>John Smith</h4>
+        <p>DOB: 1990-06-15</p>
+        <p>Approval: ✅ Granted</p>
+        <button>View Records</button>
+        <button>Upload New Record</button>
+      </div>
+      <div class="record-card">
+        <h4>Emma Brown</h4>
+        <p>DOB: 1985-12-02</p>
+        <p>Approval: ❌ Pending</p>
+        <button disabled>View Records</button>
+        <button disabled>Upload New Record</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="doctor-dashboard.js"></script>
+</body>
+</html>

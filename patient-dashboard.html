@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Dashboard - MediVault</title>
+  <link rel="stylesheet" href="patient-dashboard.css" />
+</head>
+<body>
+  <header>
+    <h1>MediVault - Patient Dashboard</h1>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <main class="dashboard">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <ul>
+        <li onclick="showSection('appointments', event)">Appointments</li>
+        <li onclick="showSection('history')">Medical History</li>
+        <li onclick="showSection('prescriptions')">Prescriptions</li>
+        <li onclick="showSection('upload')">Upload Reports</li>
+        <li onclick="showSection('access-log')">Access Log</li>
+      </ul>
+    </nav>
+
+    <!-- Content Sections -->
+    <section id="appointments" class="content-section active">
+      <h2>Appointments</h2>
+      <button class="action-btn">Book Appointment</button>
+      <button class="action-btn">Cancel Appointment</button>
+    </section>
+
+    <section id="history" class="content-section">
+      <h2>Medical History</h2>
+      <p>No history available yet.</p>
+    </section>
+
+    <section id="prescriptions" class="content-section">
+      <h2>Upcoming Prescriptions</h2>
+      <ul>
+        <li>Metformin - April 20, 2025</li>
+        <li>Atorvastatin - May 3, 2025</li>
+      </ul>
+    </section>
+
+    <section id="upload" class="content-section">
+      <h2>Upload Medical Reports</h2>
+      <form>
+        <input type="file" />
+        <button type="submit">Upload</button>
+      </form>
+    </section>
+
+    <section id="access-log" class="content-section">
+      <h2>Record Access Log</h2>
+      <ul>
+        <li>Dr. Smith accessed your blood test - April 10, 2025</li>
+        <li>Dr. Lee accessed your MRI report - April 8, 2025</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="patient-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - MediVault</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login to MediVault</h1>
+    <label for="role">Select Role:</label>
+    <select id="role" onchange="showForm(this.value)">
+      <option value="">--Choose--</option>
+      <option value="patient">Patient</option>
+      <option value="doctor">Doctor</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <!-- PATIENT FORM -->
+    <form id="patient-form" class="hidden" onsubmit="generatePatientId(event)">
+      <h2>Patient Login</h2>
+      <input type="text" id="fname" placeholder="First Name" required />
+      <input type="text" id="lname" placeholder="Last Name" required />
+      <input type="date" id="dob" required />
+      <input type="tel" id="phone" placeholder="Mobile Number" required />
+      <input type="text" id="otp" placeholder="Enter OTP" />
+      <p id="generated-id" class="id-display"></p>
+      <button type="submit">Generate ID & Login</button>
+    </form>
+
+    <!-- DOCTOR/ADMIN FORM -->
+    <form id="other-form" class="hidden">
+      <h2 id="role-title">Login</h2>
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
+

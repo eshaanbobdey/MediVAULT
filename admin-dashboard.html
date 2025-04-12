@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - MediVault</title>
+  <link rel="stylesheet" href="admin-dashboard.css" />
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard - MediVault</h1>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <main class="dashboard">
+    <nav class="sidebar">
+      <ul>
+        <li onclick="showSection('users')">Manage Users</li>
+        <li onclick="showSection('records')">All Medical Records</li>
+        <li onclick="showSection('logs')">System Logs</li>
+      </ul>
+    </nav>
+
+    <section id="users" class="content-section active">
+      <h2>All Users</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th><th>Role</th><th>Email</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Smith</td><td>Patient</td><td>john@gmail.com</td>
+            <td>
+              <button>Edit</button>
+              <button class="danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Dr. Emma Lee</td><td>Doctor</td><td>emma@hospital.com</td>
+            <td>
+              <button>Edit</button>
+              <button class="danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="records" class="content-section">
+      <h2>All Medical Records</h2>
+      <p>Access to every uploaded medical document.</p>
+      <ul>
+        <li>🗂️ John Smith - Blood Test - Uploaded 10 Apr 2025</li>
+        <li>🗂️ Emma Brown - MRI Scan - Uploaded 03 Apr 2025</li>
+      </ul>
+    </section>
+
+    <section id="logs" class="content-section">
+      <h2>System Activity Logs</h2>
+      <ul>
+        <li>🔍 Admin logged in - 11 Apr 2025, 10:05 AM</li>
+        <li>📥 Dr. Carter uploaded a file for John Smith</li>
+        <li>🛠️ Admin deleted a patient record</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>
